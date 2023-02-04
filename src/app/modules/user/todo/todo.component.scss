@@ -1,0 +1,26 @@
+.todo-wrapper {
+  margin-top: 4rem;
+  padding: 1.5rem;
+
+  .todo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-list {
+      margin-top: 1.5rem;
+      width: 100%;
+      max-width: 32rem;
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > h2 {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
