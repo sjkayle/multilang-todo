@@ -29,8 +29,9 @@
     <mat-slide-toggle
       [(ngModel)]="model.isAdmin"
       [ngModelOptions]="{ standalone: true }"
-      >Yes</mat-slide-toggle
     >
+      Yes
+    </mat-slide-toggle>
   </div>
   <app-controls>
     <button mat-raised-button routerLink="/">Cancel</button>
@@ -41,3 +42,4 @@
 </form>
 
 <!-- TODO: add form validations -->
+<!-- TODO: convert to reactive forms? -->
