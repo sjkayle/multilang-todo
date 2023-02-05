@@ -1,25 +1,26 @@
-.todo-wrapper {
+.todo {
   margin-top: 4rem;
   padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-  .todo {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  .mat-form-field {
+    width: 24rem;
+  }
 
-    &-list {
-      margin-top: 1.5rem;
-      width: 100%;
-      max-width: 32rem;
+  &-list {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 32rem;
 
-      &-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        > h2 {
-          margin-bottom: 0;
-        }
+      > h2 {
+        margin-bottom: 0;
       }
     }
   }
