@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit()" class="sign-up-form" #signUpForm="ngForm">
+  <h2>Sign up</h2>
+  <mat-form-field class="mat-form-field">
+    <mat-label>Username</mat-label>
+    <input matInput name="username" [(ngModel)]="model.username" required />
+  </mat-form-field>
+  <mat-form-field class="mat-form-field">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      name="password"
+      [(ngModel)]="model.password"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field class="mat-form-field">
+    <mat-label>Confirm password</mat-label>
+    <input
+      matInput
+      type="password"
+      name="confirmPassword"
+      [(ngModel)]="model.confirmPassword"
+      required
+    />
+  </mat-form-field>
+  <div class="single-line-field">
+    <div>Are you an administrator?</div>
+    <mat-slide-toggle
+      [(ngModel)]="model.isAdmin"
+      [ngModelOptions]="{ standalone: true }"
+      >Yes</mat-slide-toggle
+    >
+  </div>
+  <app-controls>
+    <button mat-raised-button routerLink="/auth">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" routerLink="/home">
+      Sign up
+    </button>
+  </app-controls>
+</form>
+
+<!-- TODO: add form validations -->
