@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { UserActions } from '../enums/general.enum';
+import { UserActions } from 'src/app/enums/general.enum';
 
 interface ILogs {
   date: Date;
@@ -17,11 +17,12 @@ interface IUserLogs {
 })
 export class LoggingService {
   // TODO: implement interface ILogData
-  logs = new BehaviorSubject<Array<string>>([]);
+  logs$ = new BehaviorSubject<Array<string>>([]);
 
   log(date: Date, action: UserActions, text: string) {
     // TODO: format date
     const message = `${date} ${action}: ${text}`;
-    this.logs.next(this.logs.getValue().concat([message]));
+    const logs = this.logs$.getValue();
+    this.logs$.next(logs.concat([message]));
   }
 }

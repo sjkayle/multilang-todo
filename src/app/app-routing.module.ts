@@ -7,6 +7,7 @@ import { WelcomeComponent } from './modules/auth/welcome/welcome.component';
 import { TodoComponent } from './modules/user/todo/todo.component';
 
 const routes: Routes = [
+  // TODO: add guards on protected routes
   { path: AppRoutes.HomePage, component: TodoComponent },
   {
     path: AppRoutes.AuthPage,
