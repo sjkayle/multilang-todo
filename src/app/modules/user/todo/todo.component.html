@@ -1,37 +1,35 @@
-<div class="todo-wrapper">
-  <div class="todo">
-    <form (ngSubmit)="onSubmit()" class="todo-form" #todoForm="ngForm">
-      <mat-form-field>
-        <mat-label>Add a todo</mat-label>
-        <input
-          matInput
-          name="todo"
-          [(ngModel)]="newTodo"
-          placeholder="Clean my room"
-        />
-        <mat-hint align="start">Press the Enter key to add</mat-hint>
-      </mat-form-field>
-    </form>
-    <div *ngIf="todos.length" class="todo-list">
-      <div class="todo-list-header">
-        <h2>My todos:</h2>
-        <button mat-button [matMenuTriggerFor]="translate" color="primary">
-          Translate
+<div class="todo">
+  <form (ngSubmit)="onSubmit()" class="todo-form" #todoForm="ngForm">
+    <mat-form-field class="mat-form-field">
+      <mat-label>Add a todo</mat-label>
+      <input
+        matInput
+        name="todo"
+        [(ngModel)]="newTodo"
+        placeholder="Clean my room"
+      />
+      <mat-hint align="start">Press the Enter key to add</mat-hint>
+    </mat-form-field>
+  </form>
+  <div *ngIf="todos.length" class="todo-list">
+    <div class="todo-list-header">
+      <h2>My todos:</h2>
+      <button mat-button [matMenuTriggerFor]="translate" color="primary">
+        Translate
+      </button>
+      <mat-menu #translate="matMenu" xPosition="before">
+        <button mat-menu-item (click)="onLangChange(langCodes.English)">
+          English
         </button>
-        <mat-menu #translate="matMenu" xPosition="before">
-          <button mat-menu-item (click)="onLangChange(langCodes.English)">
-            English
-          </button>
-          <button mat-menu-item (click)="onLangChange(langCodes.Vietnamese)">
-            Vietnamese
-          </button>
-        </mat-menu>
-      </div>
-      <mat-selection-list #todoList>
-        <mat-list-option *ngFor="let todo of todos">
-          {{ todo }}
-        </mat-list-option>
-      </mat-selection-list>
+        <button mat-menu-item (click)="onLangChange(langCodes.Vietnamese)">
+          Vietnamese
+        </button>
+      </mat-menu>
     </div>
+    <mat-selection-list #todoList>
+      <mat-list-option *ngFor="let todo of todos">
+        {{ todo }}
+      </mat-list-option>
+    </mat-selection-list>
   </div>
 </div>

@@ -5,5 +5,6 @@ export enum LanguageCodes {
 
 export enum UserActions {
   AddTodo = 'ADD TODO',
+  Login = 'LOG IN',
   Translate = 'TRANSLATE',
 }

@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" class="login-form" #loginForm="ngForm">
+  <h2>Login</h2>
+  <mat-form-field class="mat-form-field">
+    <mat-label>Username</mat-label>
+    <input matInput name="username" [(ngModel)]="model.username" required />
+  </mat-form-field>
+  <mat-form-field class="mat-form-field">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      name="password"
+      [(ngModel)]="model.password"
+      required
+    />
+  </mat-form-field>
+  <app-controls>
+    <button mat-raised-button routerLink="/auth">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+  </app-controls>
+</form>
+
+<!-- TODO: add form validations -->

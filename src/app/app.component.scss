@@ -3,6 +3,10 @@ $container-max-width: 64rem;
 .mat-toolbar {
   position: fixed;
   top: 0;
+
+  .user-toolbar {
+    margin-left: auto;
+  }
 }
 
 .container {

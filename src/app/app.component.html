@@ -1,6 +1,12 @@
 <mat-toolbar color="primary" class="mat-toolbar">
   <mat-toolbar-row>
     <span>Multi-lang Todo App</span>
+    <div *ngIf="isLoggedIn$ | async" class="user-toolbar">
+      <button mat-button [matMenuTriggerFor]="translate">Hello, Kayle</button>
+      <mat-menu #translate="matMenu" xPosition="before">
+        <button mat-menu-item (click)="onLogout()">Logout</button>
+      </mat-menu>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
