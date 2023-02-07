@@ -24,6 +24,14 @@ const routes: Routes = [
     ],
   },
   {
+    path: AppRoutes.HomePage,
+    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
+  },
+    {
+    path: AppRoutes.AuthPage,
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: AppRoutes.Index,
     redirectTo: '/' + AppRoutes.AuthPage,
     pathMatch: 'full',
